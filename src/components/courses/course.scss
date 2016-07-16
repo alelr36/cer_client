@@ -1,0 +1,15 @@
+.course {
+  display: inline-block;
+  max-width: 88%;
+  padding: 0 10px;
+
+  img {
+    float: right;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .course {
+    display: block;
+    max-width: 100%;
+  }
+}

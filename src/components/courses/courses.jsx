@@ -1,4 +1,7 @@
 import React from 'react';
+import Course from './course';
+
+import './courses.scss';
 
 const Courses = React.createClass({
 
@@ -20,12 +23,15 @@ const Courses = React.createClass({
 
   render() {
     return (
-      <div className="courses box">
-        <section>
-          <select name="course" id="courseSelector">
-            {this.state.courses.map((course) => <option value={course.name}>{course.name}</option>)}
-          </select>
-        </section>
+      <div id="cursos" className="courses box">
+        <ul className="courses-list">
+          {
+            this.state.courses.map((course, key) => {
+              return <li key={key}>{course.name}</li>;
+            })
+          }
+        </ul>
+        <Course />
       </div>
     );
   }

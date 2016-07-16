@@ -1,0 +1,21 @@
+.courses-list {
+  float: left;
+  list-style: none;
+  margin: 0 20px 0 10px;
+  padding: 0;
+}
+@media screen and (max-width: 1200px) {
+  .courses {
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .courses-list {
+    display: block;
+    float: none;
+
+    li {
+      padding: 10px 2px;
+    }
+  }
+}
