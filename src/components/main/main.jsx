@@ -1,11 +1,11 @@
 import React from 'react';
-import GlobalHeader from './global-header/global-header';
-import GlobalNav from './global-nav/global-nav';
-import Slider from './slider/slider';
-import AboutUs from './about-us/about-us';
-import Courses from './courses/courses';
-import Contact from './contact/contact';
-import Footer from './global-footer/global-footer';
+import GlobalHeader from 'components/global-header/global-header';
+import GlobalNav from 'components/global-nav/global-nav';
+import Slider from 'components/slider/slider';
+import AboutUs from 'components/about-us/about-us';
+import Courses from 'components/courses/courses';
+import Contact from 'components/contact/contact';
+import Footer from 'components/global-footer/global-footer';
 
 const Main = React.createClass({
 

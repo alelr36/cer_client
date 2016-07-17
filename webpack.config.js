@@ -1,3 +1,6 @@
+var path = require('path');
+var webpack = require('webpack');
+
 module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:8080',
@@ -19,6 +22,10 @@ module.exports = {
     ]
   },
   resolve: {
+    root: path.resolve(__dirname),
+    alias: {
+      components: 'src/components'
+    },
     extensions: ['', '.js', '.jsx']
   },
   output: {
@@ -28,6 +35,7 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
+    historyApiFallback: true,
     hot: true
   }
 };

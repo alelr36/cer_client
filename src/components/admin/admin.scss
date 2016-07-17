@@ -1,0 +1,19 @@
+.admin {
+  text-align: center;
+
+  .login-form {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, .6);
+    display: inline-block;
+    padding: 10px;
+    text-align: left;
+    width: 40%;
+  }
+
+  input[type=submit] {
+    float: right;
+    font-weight: bold;
+  }
+}
