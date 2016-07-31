@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import './global-nav.scss';
+import './global-nav.scss'
 
 const GlobalNav = React.createClass({
 
@@ -26,9 +26,9 @@ const GlobalNav = React.createClass({
           </div>
         </div>
       </nav>
-    );
+    )
   }
 
-});
+})
 
-export default GlobalNav;
+export default GlobalNav

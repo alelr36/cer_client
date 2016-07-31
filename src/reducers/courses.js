@@ -1,9 +1,9 @@
-import { handleActions } from 'redux-actions';
+import { handleActions } from 'redux-actions'
 import * as actionTypes from 'constants/action-types'
 
-const { COURSES } = actionTypes;
+const { COURSES } = actionTypes
 
-const initialState = {};
+const initialState = {}
 
 export default handleActions({
   // [`${COURSES.PROP}_FULFILLED`]
@@ -11,7 +11,5 @@ export default handleActions({
     ...state,
     coursesList: action.courses
   }),
-  [COURSES.FETCH]: (state, action) => ({
-
-  })
-}, initialState);
+  [COURSES.FETCH]: (state) => state
+}, initialState)

@@ -1,7 +1,7 @@
-import React from 'react';
-import moment from 'moment';
+import React from 'react'
+import moment from 'moment'
 
-import './global-footer.scss';
+import './global-footer.scss'
 
 const GlobalFooter = React.createClass({
 
@@ -16,9 +16,9 @@ const GlobalFooter = React.createClass({
           </div>
         </div>
       </footer>
-    );
+    )
   }
-  
-});
 
-export default GlobalFooter;
+})
+
+export default GlobalFooter

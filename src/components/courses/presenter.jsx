@@ -1,9 +1,9 @@
-import React from 'react';
-import Course from './course';
+import React from 'react'
+import Course from './course'
 
-import './courses.scss';
+import './courses.scss'
 
-const propTypes = React.PropTypes;
+const propTypes = React.PropTypes
 
 const Courses = React.createClass({
   propTypes: {
@@ -15,15 +15,13 @@ const Courses = React.createClass({
       <div id='cursos' className='courses box'>
         <ul className='courses-list'>
           {
-            this.props.courses.map((course, key) => {
-              return <li key={key}>{course.name}</li>;
-            })
+            this.props.courses.map((course, key) => <li key={key}>{course.name}</li>)
           }
         </ul>
         <Course />
       </div>
-    );
+    )
   }
-});
+})
 
-export default Courses;
+export default Courses

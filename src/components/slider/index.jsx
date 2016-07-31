@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Slider = React.createClass({
 
@@ -28,15 +28,16 @@ const Slider = React.createClass({
             <a className='left carousel-control' href='#carousel-example-generic' data-slide='prev'>
               <span className='icon-prev'></span>
             </a>
-            <a className='right carousel-control' href='#carousel-example-generic' data-slide='next'>
+            <a className='right carousel-control' href='#carousel-example-generic'
+               data-slide='next'>
               <span className='icon-next'></span>
             </a>
           </div>
         </div>
       </div>
-    );
+    )
   }
-  
-});
 
-export default Slider;
+})
+
+export default Slider

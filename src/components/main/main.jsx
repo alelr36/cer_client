@@ -1,9 +1,9 @@
-import React from 'react';
-import GlobalNav from 'components/global-nav';
-import Slider from 'components/slider';
-import AboutUs from 'components/about-us';
-import Courses from 'components/courses';
-import Contact from 'components/contact';
+import React from 'react'
+import GlobalNav from 'components/global-nav'
+import Slider from 'components/slider'
+import AboutUs from 'components/about-us'
+import Courses from 'components/courses'
+import Contact from 'components/contact'
 
 const Main = React.createClass({
 
@@ -26,9 +26,9 @@ const Main = React.createClass({
           </div>
         </div>
       </div>
-    );
+    )
   }
 
-});
+})
 
-export default Main;
+export default Main

@@ -1,4 +1,4 @@
-import { setCourses } from './course';
+import { setCourses } from './course'
 
 export {
   setCourses

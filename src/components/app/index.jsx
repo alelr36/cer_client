@@ -1,6 +1,6 @@
-import React from 'react';
-import GlobalHeader from 'components/global-header';
-import Footer from 'components/global-footer';
+import React from 'react'
+import GlobalHeader from 'components/global-header'
+import Footer from 'components/global-footer'
 
 const App = React.createClass({
 
@@ -11,9 +11,9 @@ const App = React.createClass({
         {this.props.children}
         <Footer />
       </div>
-    );
+    )
   }
-  
-});
 
-export default App;
+})
+
+export default App

@@ -1,5 +1,5 @@
-import React from 'react';
-import './global-header.scss';
+import React from 'react'
+import './global-header.scss'
 
 const GlobalHeader = React.createClass({
 
@@ -10,9 +10,9 @@ const GlobalHeader = React.createClass({
         <div className='address-bar'>Centro Educativo Regional</div>
         <div className='address-bar'>Belle Ville, Córdoba, Argentina</div>
       </div>
-    );
+    )
   }
-  
-});
 
-export default GlobalHeader;
+})
+
+export default GlobalHeader
