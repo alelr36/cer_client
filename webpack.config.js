@@ -24,7 +24,10 @@ module.exports = {
   resolve: {
     root: path.resolve(__dirname),
     alias: {
-      components: 'src/components'
+      actions: 'src/actions',
+      components: 'src/components',
+      constants: 'src/constants',
+      reducers: 'src/reducers'
     },
     extensions: ['', '.js', '.jsx']
   },

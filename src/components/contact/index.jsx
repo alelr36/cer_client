@@ -4,10 +4,10 @@ const Contact = React.createClass({
 
   render() {
     return (
-      <div id="contacto" className="contact box">
-        <div className="col-lg-12">
+      <div id='contacto' className='contact box'>
+        <div className='col-lg-12'>
           <hr />
-          <h2 className="intro-text text-center">Beautiful boxes
+          <h2 className='intro-text text-center'>Beautiful boxes
             <strong> to showcase your content</strong>
           </h2>
           <hr />
