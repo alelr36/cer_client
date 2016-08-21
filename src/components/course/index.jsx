@@ -2,27 +2,18 @@ import React from 'react'
 
 import './course.scss'
 
-const Course = React.createClass({
-
-  getInitialState() {
-    return {
-      course: {
-        name: 'test', description: 'test'
-      }
-    }
-  },
-
+class Course extends React.Component {
   render() {
     return (
       <article className='course'>
         <figure>
           <img width='200' src='http://michelletorres.mx/wp-content/uploads/2016/02/js.jpg' alt=''/>
         </figure>
+
+        <h1>{this.props.course.name}</h1>
+
         <p>
-          A huge thanks to Death to the Stock for allowing us to use the beautiful photos that make
-          this template really come to life. When using this template, make sure your photos are
-          decent. Also make sure that the file size on your photos is kept to a minumum to keep
-          load times to a minimum.
+          {this.props.course.description}
         </p>
         <ul>
           <li>A huge thanks to Death to the Stock for allowing us</li>
@@ -35,6 +26,10 @@ const Course = React.createClass({
       </article>
     )
   }
-})
+}
+
+Course.defaultProps = {
+  course: {}
+}
 
 export default Course

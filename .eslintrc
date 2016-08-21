@@ -15,10 +15,11 @@
     "semi": [2, "never"],
     "complexity": [2, 2],
     "comma-dangle": 0,
+    "no-underscore-dangle": 0,
     "react/jsx-uses-vars": [2],
     "react/jsx-uses-react": 1
   },
   "globals": {
-
+    "_": true
   }
 }

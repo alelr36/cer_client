@@ -1,7 +1,7 @@
 import React from 'react'
 import './global-header.scss'
 
-const GlobalHeader = React.createClass({
+class GlobalHeader extends React.Component {
 
   render() {
     return (
@@ -13,6 +13,6 @@ const GlobalHeader = React.createClass({
     )
   }
 
-})
+}
 
 export default GlobalHeader

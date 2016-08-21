@@ -1,12 +1,12 @@
 import keyMirror from 'key-mirror-nested'
 
 export default keyMirror({
-  APP: {
+  AUTH: {
     LOGIN: null,
     LOGOUT: null
   },
   COURSES: {
     FETCH: null,
-    SET: null
+    SELECT: null
   }
 }, { connChar: '/' })

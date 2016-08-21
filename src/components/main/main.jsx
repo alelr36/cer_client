@@ -2,10 +2,10 @@ import React from 'react'
 import GlobalNav from 'components/global-nav'
 import Slider from 'components/slider'
 import AboutUs from 'components/about-us'
-import Courses from 'components/courses'
+import Courses from 'containers/courses'
 import Contact from 'components/contact'
 
-const Main = React.createClass({
+class Main extends React.Component {
 
   render() {
     return (
@@ -29,6 +29,6 @@ const Main = React.createClass({
     )
   }
 
-})
+}
 
 export default Main

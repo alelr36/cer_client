@@ -3,25 +3,21 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
-import configureStore from './stores/configureStore'
-import * as actions from './actions'
+import { startSaga, configureStore } from './stores/configureStore'
+import setAuthToken from 'utils/setAuthToken'
 
 import App from 'components/app'
 import Main from 'components/main/main'
-import Admin from 'components/admin'
-
-const courses = [
-  { title: 'Some other track', name: 'My name 1', description: 'asdasd' },
-  { title: 'Some other track', name: 'My name 2', description: 'asdasd' },
-  { title: 'Some other track', name: 'My name 3', description: 'asdasd' },
-  { title: 'Some other track', name: 'My name 4', description: 'asdasd' },
-  { title: 'Some other track', name: 'My name 5', description: 'asdasd' },
-  { title: 'Some other track', name: 'My name 6', description: 'asdasd' }
-]
+import CourseForm from 'containers/course-form'
+import Authenticate from 'containers/authenticate'
 
 const store = configureStore()
-store.dispatch(actions.setCourses(courses))
+startSaga()
 const history = syncHistoryWithStore(browserHistory, store)
+
+if (localStorage.jwtToken) {
+  setAuthToken(localStorage.jwtToken)
+}
 
 ReactDOM.render(
   <Provider store={store}>
@@ -29,7 +25,8 @@ ReactDOM.render(
       <Route path='/' component={App}>
         <IndexRoute component={Main} />
         <Route path='/' component={Main} />
-        <Route path='/admin' component={Admin} />
+        <Route path='/login' component={Authenticate} />
+        <Route path='/admin' component={CourseForm} />
       </Route>
     </Router>
   </Provider>,

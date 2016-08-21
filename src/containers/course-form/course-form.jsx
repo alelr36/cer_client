@@ -1,13 +1,27 @@
-import React from 'react';
+import React from 'react'
 
-import './course-form.scss';
+import './course-form.scss'
 
-const Form = React.createClass({
+class Form extends React.Component {
+
+  componentWillMount() {
+    this.checkAuth()
+  }
+
+  componentDidMount() {
+    this.checkAuth()
+  }
+
+  checkAuth() {
+    if (!this.props.user.token) {
+      this.props.redirect('/login')
+    }
+  }
 
   render() {
     return (
       <div className='course-form'>
-        <form action='POST'>
+        <form>
           <div className='form-group'>
             <input type='text' className='form-control' id='title' placeholder='Course Title' />
           </div>
@@ -21,9 +35,13 @@ const Form = React.createClass({
           <input type='submit' value='Save' className='btn btn-default' />
         </form>
       </div>
-    );
+    )
   }
 
-});
+}
 
-export default Form;
+Form.defaultProps = {
+  user: {}
+}
+
+export default Form

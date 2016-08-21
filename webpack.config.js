@@ -36,12 +36,25 @@ module.exports = {
   resolve: {
     root: path.resolve(__dirname),
     alias: {
+      api: 'src/api',
       actions: 'src/actions',
       components: 'src/components',
+      containers: 'src/containers',
       constants: 'src/constants',
-      reducers: 'src/reducers'
+      reducers: 'src/reducers',
+      sagas: 'src/sagas',
+      utils: 'src/utils'
     },
     extensions: ['', '.js', '.jsx']
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      _: 'lodash'
+    })
+  ],
+  node: {
+    dns: 'empty',
+    net: 'empty'
   },
   output: {
     path: __dirname + '/dist',

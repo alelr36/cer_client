@@ -3,7 +3,7 @@ import moment from 'moment'
 
 import './global-footer.scss'
 
-const GlobalFooter = React.createClass({
+class GlobalFooter extends React.Component {
 
   render() {
     return (
@@ -19,6 +19,6 @@ const GlobalFooter = React.createClass({
     )
   }
 
-})
+}
 
 export default GlobalFooter

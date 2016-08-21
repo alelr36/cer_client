@@ -3,13 +3,28 @@ import * as actionTypes from 'constants/action-types'
 
 const { COURSES } = actionTypes
 
-const initialState = {}
+const initialState = {
+  coursesList: [],
+  selectedCourse: ''
+}
 
 export default handleActions({
-  // [`${COURSES.PROP}_FULFILLED`]
-  [COURSES.SET]: (state, action) => ({
+  [`${COURSES.SELECT}`]: (state, action) => ({
     ...state,
-    coursesList: action.courses
+    selectedCourse: action.payload
   }),
-  [COURSES.FETCH]: (state) => state
+  [`${COURSES.FETCH}`]: (state) => ({
+    ...state,
+    coursesList: [],
+    selectedCourse: {}
+  }),
+  [`${COURSES.FETCH}_FULFILLED`]: (state, action) => ({
+    ...state,
+    coursesList: action.payload.data.courses,
+    selectedCourse: action.payload.data.courses[0]._id
+  }),
+  [`${COURSES.FETCH}_REJECTED`]: (state) => ({
+    ...state,
+    coursesList: []
+  })
 }, initialState)

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AboutUs = React.createClass({
+class AboutUs extends React.Component {
 
   render() {
     return (
@@ -36,6 +36,6 @@ const AboutUs = React.createClass({
     )
   }
 
-})
+}
 
 export default AboutUs

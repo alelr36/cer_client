@@ -2,7 +2,7 @@ import React from 'react'
 
 import './global-nav.scss'
 
-const GlobalNav = React.createClass({
+class GlobalNav extends React.Component {
 
   render() {
     return (
@@ -29,6 +29,6 @@ const GlobalNav = React.createClass({
     )
   }
 
-})
+}
 
 export default GlobalNav

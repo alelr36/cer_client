@@ -2,7 +2,7 @@ import React from 'react'
 import GlobalHeader from 'components/global-header'
 import Footer from 'components/global-footer'
 
-const App = React.createClass({
+class App extends React.Component {
 
   render() {
     return (
@@ -14,6 +14,6 @@ const App = React.createClass({
     )
   }
 
-})
+}
 
 export default App

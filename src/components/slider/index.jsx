@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Slider = React.createClass({
+class Slider extends React.Component {
 
   render() {
     return (
@@ -38,6 +38,6 @@ const Slider = React.createClass({
     )
   }
 
-})
+}
 
 export default Slider

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Contact = React.createClass({
+class Contact extends React.Component {
 
   render() {
     return (
@@ -27,6 +27,6 @@ const Contact = React.createClass({
     )
   }
 
-})
+}
 
 export default Contact
