@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import CourseForm from './course-form'
+import { redirect } from 'actions/auth' //TODO: REMOVE THIS ONCE ADMIN PAGE IS READY
 import { redirect } from 'actions/auth'
 
 function mapStateToProps(state) {

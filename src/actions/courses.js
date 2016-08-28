@@ -11,3 +11,7 @@ export const fetchCourses = createAction(COURSES.FETCH, () => {
 
   return { promise }
 }, _.identity)
+
+export const createCourse = createAction(COURSES.CREATE, (course) => {
+  const promise = coursesApi.createCourse(course.title, course.name, course.description)
+})

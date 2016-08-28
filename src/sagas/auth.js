@@ -1,6 +1,6 @@
 import { takeLatest } from 'redux-saga'
-import { select } from 'redux-saga/effects'
-import setAuthToken from 'utils/setAuthToken'
+import { select, put } from 'redux-saga/effects'
+import { setToken, redirect } from 'actions/auth'
 import actionTypes from 'constants/action-types'
 
 const { AUTH } = actionTypes
@@ -9,7 +9,9 @@ export function* updateAfterAuthSuccess() {
   const { auth } = yield select()
 
   localStorage.setItem('jwtToken', auth.user.token)
-  setAuthToken(auth.user.token)
+
+  yield put(setToken(auth.user.token))
+  yield put(redirect('/admin'))
 }
 
 export function* watchAuthFulfilled() {

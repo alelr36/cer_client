@@ -1,6 +1,7 @@
 import * as actionTypes from 'constants/action-types'
 import * as authApi from 'api/auth'
 import { createAction } from 'redux-actions'
+import axios from 'axios'
 
 const { AUTH } = actionTypes
 
@@ -9,6 +10,18 @@ export const submitLogin = createAction(AUTH.LOGIN, (user) => {
 
   return { promise }
 }, _.identity)
+
+export const setToken = createAction(AUTH.SET_TOKEN, (token) => {
+  /* eslint-disable dot-notation */
+  if (!!token) {
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+  } else {
+    delete axios.defaults.headers.common['Authorization']
+  }
+  /* eslint-disable dot-notation */
+
+  return { token }
+})
 
 // TODO: REVIEW THIS
 export const redirect = createAction('@@router/LOCATION_CHANGE', (pathname) => ({

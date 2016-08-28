@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { startSaga, configureStore } from './stores/configureStore'
-import setAuthToken from 'utils/setAuthToken'
+import { setToken } from 'actions/auth'
 
 import App from 'components/app'
 import Main from 'components/main/main'
@@ -16,7 +16,7 @@ startSaga()
 const history = syncHistoryWithStore(browserHistory, store)
 
 if (localStorage.jwtToken) {
-  setAuthToken(localStorage.jwtToken)
+  store.dispatch(setToken(localStorage.jwtToken))
 }
 
 ReactDOM.render(

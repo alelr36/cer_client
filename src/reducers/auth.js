@@ -20,5 +20,9 @@ export default handleActions({
     ...state,
     user: {}
   }),
+  [`${AUTH.SET_TOKEN}`]: (state, action) => ({
+    ...state,
+    user: { token: action.payload.token }
+  }),
   [`${AUTH.LOGOUT}`]: (state) => state
 }, initialState)
