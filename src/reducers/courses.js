@@ -6,7 +6,11 @@ const { COURSES } = actionTypes
 const initialState = {
   coursesList: [],
   selectedCourse: '',
-  newCourse: {}
+  newCourse: {
+    title: '',
+    name: '',
+    description: ''
+  }
 }
 
 export default handleActions({
@@ -31,10 +35,19 @@ export default handleActions({
   [`${COURSES.CREATE}_FULFILLED`]: (state, action) => ({
     ...state,
     coursesList: _.concat(state.coursesList, action.payload.data.course),
-    newCourse: {}
+    newCourse: initialState.newCourse
   }),
-  [`${COURSES.DELETE}_FULFILLED`]: (state, action) => ({
+  [`${COURSES.DELETE}_FULFILLED`]: (state, action) => {
+    const newList = _.filter(state.coursesList, (c) => action.payload.data.course._id !== c._id)
+
+    return {
+      ...state,
+      coursesList: newList,
+      selectedCourse: newList.length ? newList[0]._id : ''
+    }
+  },
+  [`${COURSES.UPDATE_CREATED}`]: (state, action) => ({
     ...state,
-    coursesList: _.filter(state.coursesList, (c) => action.payload.data.course._id !== c._id)
+    newCourse: action.payload.course
   })
 }, initialState)

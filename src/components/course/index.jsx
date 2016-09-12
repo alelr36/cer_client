@@ -7,7 +7,7 @@ class Course extends React.Component {
     return (
       <article className='course'>
         <figure>
-          <img width='200' src='http://michelletorres.mx/wp-content/uploads/2016/02/js.jpg' alt=''/>
+          <img width='400' src='http://michelletorres.mx/wp-content/uploads/2016/02/js.jpg' alt=''/>
         </figure>
 
         <h1>{this.props.course.name}</h1>

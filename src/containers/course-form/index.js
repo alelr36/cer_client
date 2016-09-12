@@ -1,17 +1,18 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import CourseForm from './course-form'
-import { createCourse } from 'actions/courses'
+import { createCourse, updateCourseBeingCreated } from 'actions/courses'
 
 function mapStateToProps(state) {
   return {
-    newCourse: ''// TODO: Add the newCourse fields to the global state
+    course: state.courses.newCourse
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     createCourse,
+    updateCourseBeingCreated
   }, dispatch)
 }
 

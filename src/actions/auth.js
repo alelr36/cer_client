@@ -11,6 +11,8 @@ export const submitLogin = createAction(AUTH.LOGIN, (user) => {
   return { promise }
 }, _.identity)
 
+export const logout = createAction(AUTH.LOGOUT)
+
 export const setToken = createAction(AUTH.SET_TOKEN, (token) => {
   // TODO: is this working?
   /* eslint-disable dot-notation */

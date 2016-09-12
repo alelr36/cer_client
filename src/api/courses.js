@@ -2,17 +2,18 @@ import axios from 'axios'
 import querystring from 'querystring'
 
 export function fetchCourses() {
-  return axios.get('http://localhost:8000/courses') //TODO: all urls should be envvars
+  // TODO: all urls should be envvars
+  return axios.get('https://cer-server.herokuapp.com/courses')
 }
 
 export function createCourse(title, name, description) {
-  return axios.post('http://localhost:8000/courses',
+  return axios.post('https://cer-server.herokuapp.com/courses',
     querystring.stringify({ title, name, description })
   )
 }
 
 export function deleteCourse(id) {
-  return axios.delete('http://localhost:8000/courses',
+  return axios.delete('https://cer-server.herokuapp.com/courses',
     {
       headers: {
         'X-Course-Id': id

@@ -10,6 +10,7 @@ export default keyMirror({
     FETCH: null,
     SELECT: null,
     CREATE: null,
-    DELETE: null
+    DELETE: null,
+    UPDATE_CREATED: null
   }
 }, { connChar: '/' })

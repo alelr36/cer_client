@@ -6,6 +6,8 @@ const { COURSES } = actionTypes
 
 export const selectCourse = createAction(COURSES.SELECT, (course) => course._id)
 
+export const updateCourseBeingCreated = createAction(COURSES.UPDATE_CREATED, (course) => course)
+
 export const fetchCourses = createAction(COURSES.FETCH, () => {
   const promise = coursesApi.fetchCourses()
 
@@ -20,6 +22,6 @@ export const createCourse = createAction(COURSES.CREATE, (course) => {
 
 export const deleteCourse = createAction(COURSES.DELETE, (courseId) => {
   const promise = coursesApi.deleteCourse(courseId)
-  
+
   return { promise }
 })

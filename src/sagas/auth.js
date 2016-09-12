@@ -20,3 +20,17 @@ export function* watchAuthFulfilled() {
     updateAfterAuthSuccess
   )
 }
+
+export function* updateAfterLogout() {
+  localStorage.removeItem('jwtToken')
+
+  yield put(setToken())
+  yield put(redirect('/login'))
+}
+
+export function* watchLogout() {
+  yield* takeLatest(
+      [AUTH.LOGOUT],
+      updateAfterLogout
+  )
+}

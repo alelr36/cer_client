@@ -3,9 +3,6 @@ import CoursesList from 'containers/courses-list'
 import CourseForm from 'containers/course-form'
 
 class Admin extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   componentWillMount() {
     this.checkAuth()
@@ -24,6 +21,7 @@ class Admin extends React.Component {
   render() {
     return (
       <div className='admin'>
+        <button onClick={this.props.logout}>Logout</button>
         <CoursesList />
         <CourseForm />
       </div>

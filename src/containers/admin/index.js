@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Admin from './admin'
-import { redirect } from 'actions/auth'
+import { logout, redirect } from 'actions/auth'
 
 function mapStateToProps(state) {
   return {
@@ -11,6 +11,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
+    logout,
     redirect
   }, dispatch)
 }
