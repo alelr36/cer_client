@@ -14,4 +14,12 @@ export const fetchCourses = createAction(COURSES.FETCH, () => {
 
 export const createCourse = createAction(COURSES.CREATE, (course) => {
   const promise = coursesApi.createCourse(course.title, course.name, course.description)
+
+  return { promise }
+})
+
+export const deleteCourse = createAction(COURSES.DELETE, (courseId) => {
+  const promise = coursesApi.deleteCourse(courseId)
+  
+  return { promise }
 })

@@ -1,18 +1,17 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import CourseForm from './course-form'
-import { redirect } from 'actions/auth' //TODO: REMOVE THIS ONCE ADMIN PAGE IS READY
-import { redirect } from 'actions/auth'
+import { createCourse } from 'actions/courses'
 
 function mapStateToProps(state) {
   return {
-    user: state.auth.user
+    newCourse: ''// TODO: Add the newCourse fields to the global state
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    redirect
+    createCourse,
   }, dispatch)
 }
 

@@ -7,8 +7,8 @@ import { startSaga, configureStore } from './stores/configureStore'
 import { setToken } from 'actions/auth'
 
 import App from 'components/app'
-import Main from 'components/main/main'
-import CourseForm from 'containers/course-form'
+import Main from 'components/main'
+import Admin from 'containers/admin'
 import Authenticate from 'containers/authenticate'
 
 const store = configureStore()
@@ -26,7 +26,7 @@ ReactDOM.render(
         <IndexRoute component={Main} />
         <Route path='/' component={Main} />
         <Route path='/login' component={Authenticate} />
-        <Route path='/admin' component={CourseForm} />
+        <Route path='/admin' component={Admin} />
       </Route>
     </Router>
   </Provider>,

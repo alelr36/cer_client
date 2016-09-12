@@ -12,11 +12,13 @@ export const submitLogin = createAction(AUTH.LOGIN, (user) => {
 }, _.identity)
 
 export const setToken = createAction(AUTH.SET_TOKEN, (token) => {
+  // TODO: is this working?
   /* eslint-disable dot-notation */
+  /* Should this use Bearer? */
   if (!!token) {
-    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+    axios.defaults.headers.common['x-access-token'] = token
   } else {
-    delete axios.defaults.headers.common['Authorization']
+    delete axios.defaults.headers.common['x-access-token']
   }
   /* eslint-disable dot-notation */
 

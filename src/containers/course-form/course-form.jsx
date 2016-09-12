@@ -19,55 +19,51 @@ class Form extends React.Component {
   handleSubmit(event) {
     event.preventDefault()
 
-    const course = {
-      title: this.state.title,
-      name: this.state.name,
-      description: this.state.description
-    }
-
-    this.props.submitLogin(course)
+    this.props.createCourse(this.state.course)
   }
 
+  // TODO: The change should be debounced, and the values should go to the global state
   handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value })
+    this.setState({
+      ...this.state,
+      course: {
+        ...this.state.course,
+        [event.target.name]: event.target.value
+      }
+    })
   }
-
-  /*Create an admin page for this*/
-  componentWillMount() {
-    this.checkAuth()
-  }
-
-  componentDidMount() {
-    this.checkAuth()
-  }
-
-  checkAuth() {
-    if (!this.props.user.token) {
-      this.props.redirect('/login')
-    }
-  }
-  /*Create an admin page for this*/
 
   render() {
+    const course = this.state
+
     return (
       <div className='course-form'>
         <form role='form' className='course-form' onSubmit={this.handleSubmit}>
           <div className='form-group'>
-            <input type='text'
+            <input onChange={this.handleChange}
+                   value={course.title}
+                   type='text'
                    className='form-control'
+                   name='title'
                    id='title'
                    placeholder='Course Title'
                    required/>
           </div>
           <div className='form-group'>
-            <input type='text'
+            <input onChange={this.handleChange}
+                   value={course.name}
+                   type='text'
                    className='form-control'
+                   name='name'
                    id='name'
                    placeholder='Course Name'
                    required/>
           </div>
           <div className='form-group'>
-            <textarea className='form-control'
+            <textarea onChange={this.handleChange}
+                      value={course.description}
+                      className='form-control'
+                      name='description'
                       id='description'
                       placeholder='Course Description'
                       required>
@@ -82,7 +78,7 @@ class Form extends React.Component {
 }
 
 Form.defaultProps = {
-  user: {}
+  newCourse: {} // define new course once it's in the global state
 }
 
 export default Form

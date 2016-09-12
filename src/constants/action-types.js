@@ -9,6 +9,7 @@ export default keyMirror({
   COURSES: {
     FETCH: null,
     SELECT: null,
-    CREATE: null
+    CREATE: null,
+    DELETE: null
   }
 }, { connChar: '/' })
