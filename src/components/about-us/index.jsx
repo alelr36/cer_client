@@ -11,7 +11,9 @@ class AboutUs extends React.Component {
             <strong>worth visiting</strong>
           </h2>
           <hr />
-          <img className='img-responsive img-border img-left' src='img/intro-pic.jpg' alt=''/>
+          <img className='img-responsive img-border img-left'
+               src='public/img/intro-pic.jpg'
+               alt=''/>
           <hr className='visible-xs'/>
           <p>
             The boxes used in this template are nested inbetween a normal Bootstrap row and the

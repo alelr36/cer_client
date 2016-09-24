@@ -1,12 +1,11 @@
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
-    './src/index.jsx'
-  ],
+  entry: {
+    app: './src/index.jsx'
+  },
   module: {
     preLoaders: [
       {
@@ -24,7 +23,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'react-hot!babel'
+        loader: 'babel'
       },
       {
         test: /\.scss?$/,
@@ -36,8 +35,8 @@ module.exports = {
   resolve: {
     root: path.resolve(__dirname),
     alias: {
-      api: 'src/api',
       actions: 'src/actions',
+      api: 'src/api',
       components: 'src/components',
       containers: 'src/containers',
       constants: 'src/constants',
@@ -50,6 +49,11 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       _: 'lodash'
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.tpl.html',
+      inject: 'body',
+      filename: 'index.html'
     })
   ],
   node: {
@@ -58,12 +62,11 @@ module.exports = {
   },
   output: {
     path: __dirname + '/dist',
-    publicPath: '/',
+    // publicPath: '/',
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: './dist',
-    historyApiFallback: true,
-    hot: true
+    contentBase: './src',
+    historyApiFallback: true
   }
 };

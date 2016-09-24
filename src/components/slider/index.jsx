@@ -15,13 +15,13 @@ class Slider extends React.Component {
 
             <div className='carousel-inner'>
               <div className='item active'>
-                <img className='img-responsive img-full' src='img/slide-1.jpg' alt=''/>
+                <img className='img-responsive img-full' src='public/img/slide-1.jpg' alt=''/>
               </div>
               <div className='item'>
-                <img className='img-responsive img-full' src='img/slide-2.jpg' alt=''/>
+                <img className='img-responsive img-full' src='public/img/slide-2.jpg' alt=''/>
               </div>
               <div className='item'>
-                <img className='img-responsive img-full' src='img/slide-3.jpg' alt=''/>
+                <img className='img-responsive img-full' src='public/img/slide-3.jpg' alt=''/>
               </div>
             </div>
 
