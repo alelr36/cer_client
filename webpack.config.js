@@ -3,9 +3,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: {
-    app: './src/index.jsx'
-  },
+  entry: './src/index.jsx',
   module: {
     preLoaders: [
       {
@@ -63,7 +61,7 @@ module.exports = {
   output: {
     path: __dirname + '/dist',
     // publicPath: '/',
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   devServer: {
     contentBase: './src',

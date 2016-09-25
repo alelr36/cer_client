@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --inline --config ./webpack.config.js",
+    "start": "webpack-dev-server --devtool source-map --progress --colors --inline",
     "build": "npm run clean && webpack --progress && npm run copyAssets",
     "copyAssets": "cp -R src/public/ dist/public/",
     "clean": "rimraf dist",
