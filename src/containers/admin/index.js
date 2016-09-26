@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import Admin from './admin'
 import { logout, redirect } from 'actions/auth'
+import Admin from './admin'
 
 function mapStateToProps(state) {
   return {

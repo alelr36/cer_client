@@ -1,7 +1,7 @@
-import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import CourseForm from './course-form'
+import { connect } from 'react-redux'
 import { createCourse, updateCourseBeingCreated } from 'actions/courses'
+import CourseForm from './course-form'
 
 function mapStateToProps(state) {
   return {

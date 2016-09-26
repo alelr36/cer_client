@@ -17,7 +17,7 @@ export const setToken = createAction(AUTH.SET_TOKEN, (token) => {
   // TODO: is this working?
   /* eslint-disable dot-notation */
   /* Should this use Bearer? */
-  if (!!token) {
+  if (token) {
     axios.defaults.headers.common['x-access-token'] = token
   } else {
     delete axios.defaults.headers.common['x-access-token']
@@ -28,7 +28,7 @@ export const setToken = createAction(AUTH.SET_TOKEN, (token) => {
 })
 
 // TODO: REVIEW THIS
-export const redirect = createAction('@@router/LOCATION_CHANGE', (pathname) => ({
+export const redirect = createAction('@@router/LOCATION_CHANGE', pathname => ({
   pathname,
   search: '',
   hash: '',

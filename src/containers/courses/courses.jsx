@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 import Course from 'components/course'
 
 import './courses.scss'
@@ -9,7 +10,7 @@ class Courses extends React.Component {
   }
 
   render() {
-    const course = _.find(this.props.courses, (c) => c._id === this.props.selectedCourse)
+    const course = _.find(this.props.courses, c => c._id === this.props.selectedCourse)
 
     return (
       <div id='cursos' className='courses box'>
@@ -24,7 +25,9 @@ class Courses extends React.Component {
   createCoursesList() {
     return this.props.courses.map((course, key) =>
       <li key={key} onClick={() => this.props.selectCourse(course)}>
-        <a>{course.title}</a>
+        <a className={classNames({ selected: this.props.selectedCourse === course._id })}>
+          {course.title}
+        </a>
       </li>
     )
   }

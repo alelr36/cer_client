@@ -8,7 +8,7 @@ const initialState = {
 }
 
 export default handleActions({
-  [`${AUTH.LOGIN}_PENDING`]: (state) => ({
+  [`${AUTH.LOGIN}_PENDING`]: state => ({
     ...state,
     user: {}
   }),
@@ -16,7 +16,7 @@ export default handleActions({
     ...state,
     user: { token: action.payload.data.token }
   }),
-  [`${AUTH.LOGIN}_REJECTED`]: (state) => ({
+  [`${AUTH.LOGIN}_REJECTED`]: state => ({
     ...state,
     user: {}
   }),
@@ -24,7 +24,7 @@ export default handleActions({
     ...state,
     user: { token: action.payload.token }
   }),
-  [`${AUTH.LOGOUT}`]: (state) => ({
+  [`${AUTH.LOGOUT}`]: state => ({
     ...state,
     user: {}
   })

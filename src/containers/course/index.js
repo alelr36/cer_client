@@ -1,7 +1,7 @@
+import { deleteCourse } from 'actions/courses'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Course from './course'
-import { deleteCourse } from 'actions/courses'
 
 function mapStateToProps(state) {
   return {

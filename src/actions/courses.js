@@ -4,9 +4,9 @@ import { createAction } from 'redux-actions'
 
 const { COURSES } = actionTypes
 
-export const selectCourse = createAction(COURSES.SELECT, (course) => course._id)
+export const selectCourse = createAction(COURSES.SELECT, course => course._id)
 
-export const updateCourseBeingCreated = createAction(COURSES.UPDATE_CREATED, (course) => course)
+export const updateCourseBeingCreated = createAction(COURSES.UPDATE_CREATED, course => course)
 
 export const fetchCourses = createAction(COURSES.FETCH, () => {
   const promise = coursesApi.fetchCourses()

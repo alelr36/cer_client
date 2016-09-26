@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import CoursesList from './courses-list'
 import { selectCourse, fetchCourses } from 'actions/courses'
+import CoursesList from './courses-list'
 
 function mapStateToProps(state) {
   return {

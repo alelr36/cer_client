@@ -18,7 +18,7 @@ export default handleActions({
     ...state,
     selectedCourse: action.payload
   }),
-  [`${COURSES.FETCH}`]: (state) => ({
+  [`${COURSES.FETCH}`]: state => ({
     ...state,
     coursesList: [],
     selectedCourse: {}
@@ -28,7 +28,7 @@ export default handleActions({
     coursesList: action.payload.data.courses,
     selectedCourse: action.payload.data.courses.length ? action.payload.data.courses[0]._id : ''
   }),
-  [`${COURSES.FETCH}_REJECTED`]: (state) => ({
+  [`${COURSES.FETCH}_REJECTED`]: state => ({
     ...state,
     coursesList: []
   }),
@@ -38,7 +38,7 @@ export default handleActions({
     newCourse: initialState.newCourse
   }),
   [`${COURSES.DELETE}_FULFILLED`]: (state, action) => {
-    const newList = _.filter(state.coursesList, (c) => action.payload.data.course._id !== c._id)
+    const newList = _.filter(state.coursesList, c => action.payload.data.course._id !== c._id)
 
     return {
       ...state,
