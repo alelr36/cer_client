@@ -52,6 +52,11 @@ module.exports = {
       template: 'src/index.tpl.html',
       inject: 'body',
       filename: 'index.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.tpl.html',
+      inject: 'body',
+      filename: 'admin.html'
     })
   ],
   node: {
