@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --devtool source-map --progress --colors --inline",
-    "build": "npm run clean && webpack --progress && npm run copyAssets",
+    "build": "npm run clean && webpack --progress --colors && npm run copyAssets",
     "copyAssets": "cp -R src/public/ dist/public/",
     "clean": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1"

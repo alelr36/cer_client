@@ -57,7 +57,8 @@ module.exports = {
       template: 'src/index.tpl.html',
       inject: 'body',
       filename: 'admin.html'
-    })
+    }),
+    new webpack.optimize.CommonsChunkPlugin('commons.chunk.js')
   ],
   node: {
     dns: 'empty',
