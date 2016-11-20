@@ -6,9 +6,9 @@ export function fetchCourses() {
   return axios.get('https://cer-server.herokuapp.com/courses')
 }
 
-export function createCourse(title, name, description) {
+export function createCourse(title, name, description, items = ['a','b','c'], img = {}) {
   return axios.post('https://cer-server.herokuapp.com/courses',
-    querystring.stringify({ title, name, description })
+    querystring.stringify({ title, name, description, items, img })
   )
 }
 

@@ -47,6 +47,18 @@ class Form extends React.Component {
                    placeholder='Course Name'
                    required/>
           </div>
+          <div className="form-group">
+            <input onChange={this.handleChange}
+                   value={this.props.course.image}
+                   type='file'
+                   className='form-control'
+                   name='image'
+                   placeholder='Select an Image'/>
+          </div>
+          <div className="form-group">
+            {this.createItemsList()}
+            <button>+ Add</button>
+          </div>
           <div className='form-group'>
             <textarea onChange={this.handleChange}
                       value={this.props.course.description}
@@ -59,6 +71,12 @@ class Form extends React.Component {
           <input type='submit' value='Save' className='btn btn-default' />
         </form>
       </div>
+    )
+  }
+
+  createItemsList() {
+    return this.props.course.items.map((item, key) =>
+      <input type="text" value='item' key={key}/>
     )
   }
 

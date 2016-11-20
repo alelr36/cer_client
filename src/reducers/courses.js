@@ -9,7 +9,9 @@ const initialState = {
   newCourse: {
     title: '',
     name: '',
-    description: ''
+    description: '',
+    image: '',
+    items: []
   }
 }
 
